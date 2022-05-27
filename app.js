@@ -58,5 +58,4 @@ True.textContent = Number(True.textContent)+1;
 False.textContent = Number(False.textContent)+1;
 }
 newQuestion()
-
 }
