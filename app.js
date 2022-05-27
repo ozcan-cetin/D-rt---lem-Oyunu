@@ -23,13 +23,13 @@ function RandomNumber(min, max){
 function newQuestion(){
 let operation = ["+","-","*","/"];
 Operator.textContent = operation[RandomNumber(0,4)];// operator seçimi
-Number1.textContent = RandomNumber(0, 50);
-Number2.textContent = RandomNumber(0, 50);
+Number1.textContent = RandomNumber(0, 10);
+Number2.textContent = RandomNumber(0, 10);
 
 // Kalans12 bölme işlemi yapacak koşul
 if(Operator.textContent =="/"){
 while(true){
-    Number2.textContent = RandomNumber(0,50);
+    Number2.textContent = RandomNumber(0,10);
     if(Number1.textContent % Number2.textContent == 0){
     break;
 }
@@ -49,7 +49,7 @@ switch(Operator.textContent){
 case'+':ans = n1+n2;break;
 case'-':ans = n1-n2;break;
 case'*':ans = n1*n2;break;
-case'/':ans = nl/n2;break;
+case'/':ans = n1/n2;break;
 default:break;
 }
 if(result.value == ans){
