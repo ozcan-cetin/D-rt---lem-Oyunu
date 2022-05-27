@@ -13,8 +13,8 @@ False=document.getElementById('False');
 
 //rastgele sayı üretiyorum
 function RandomNumber(min, max){
-let number = Math.floor(Math.random()*(max - min))+min;
-return number;
+    let number = Math.floor(Math.random()*(max - min))+min;
+    return number;
 }
 
 //oyunun başlangıcında veya soru tahmini sonrası yeni soru
@@ -23,16 +23,16 @@ return number;
 function newQuestion(){
 let operation = ["+","-","*","/"];
 Operator.textContent = operation[RandomNumber(0,4)];// operator seçimi
-Number1.textContent=RandomNumber(0, 50);
-Number2.textContent=RandomNumber(0, 50);
-}
+Number1.textContent = RandomNumber(0, 50);
+Number2.textContent = RandomNumber(0, 50);
 
 // Kalans12 bölme işlemi yapacak koşul
 if(Operator.textContent =="/"){
 while(true){
-Number2.textContent = RandomNumber(0,50);
-if(Number1.textContent % Number2.textContent == 0){
-break;
+    Number2.textContent = RandomNumber(0,50);
+    if(Number1.textContent % Number2.textContent == 0){
+    break;
+}
 }
 }
 }
@@ -42,10 +42,10 @@ newQuestion();
 }
 // cevapla butonuna basıldığında değerlendirme işlemi yapma
 answer.onclick=function(){
-var ans,nl,n2;
+let ans,nl,n2;
 n1 = Number(Number1.textContent);
 n2 = Number(Number2.textContent);
-switch(Operator,textContent){
+switch(Operator.textContent){
 case'+':ans = n1+n2;break;
 case'-':ans = n1-n2;break;
 case'*':ans = n1*n2;break;
@@ -55,7 +55,8 @@ default:break;
 if(result.value == ans){
 True.textContent = Number(True.textContent)+1;
 }else{
-False.text.Content = Number(False.textContent)+1;
+False.textContent = Number(False.textContent)+1;
 }
+newQuestion()
 
 }
